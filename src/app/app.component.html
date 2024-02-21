@@ -1,10 +1,5 @@
-<mat-toolbar color="primary">
-  <span>Star Wars API</span>
-  <span class="example-spacer"></span>
-  <nav>
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/filmes">Filmes</a>
-    <a mat-button routerLink="/nave">Nave</a>
-  </nav>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<app-header></app-header>
+
+<section class="app">
+  <router-outlet></router-outlet>
+</section>
