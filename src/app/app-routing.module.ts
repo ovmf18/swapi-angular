@@ -6,8 +6,8 @@ import { StarshipsComponent } from './components/pages/starships/starships.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'filmes', component: FilmsComponent },
-  { path: 'nave', component: StarshipsComponent },
+  { path: 'films', component: FilmsComponent },
+  { path: 'starships', component: StarshipsComponent },
 ];
 
 @NgModule({
