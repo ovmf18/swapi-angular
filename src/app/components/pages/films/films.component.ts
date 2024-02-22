@@ -1,27 +1,34 @@
+import { SwapiService } from './../../../services/swapi.service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FilmService } from '../../../film.service';
 import { Film } from '../../../models/interfaces';
+
 @Component({
   selector: 'app-films',
   templateUrl: './films.component.html',
   styleUrls: ['./films.component.css'],
 })
 export class FilmsComponent implements OnInit {
-  columnLabels: { [key: string]: string } = {
-    title: 'Title',
-    episode_id: 'Episode',
-    director: 'Director',
-    release_date: 'Release Date',
-  };
+  isLoading = true;
 
-  displayedColumns: string[] = Object.keys(this.columnLabels);
-  dataSource: Film[] = [];
+  constructor(private swapiService: SwapiService) {}
 
-  constructor(private filmService: FilmService) {}
+  resultFilms: Film[] = [];
+  columns: string[] = ['title', 'director', 'producer', 'release_date'];
 
-  ngOnInit(): void {
-    this.filmService.getFilms().subscribe((data: Film[]) => {
-      this.dataSource = data;
+  getFilms() {
+    this.swapiService.getFilms().subscribe((res) => {
+      this.resultFilms = res.results;
+      this.isLoading = false;
     });
+  }
+
+  ngOnInit() {
+    this.getFilms();
+  }
+
+  formatDate(data: string) {
+    const dataObj = new Date(data);
+    return dataObj.toLocaleDateString('pt-BR');
   }
 }

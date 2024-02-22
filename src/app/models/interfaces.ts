@@ -1,3 +1,10 @@
+export interface ReturnAPI<T> {
+  count: number;
+  next: null | string;
+  previous: null | string;
+  results: T[];
+}
+
 export interface Film {
   title: string;
   episode_id: number;
@@ -15,6 +22,6 @@ export interface Film {
   url: string;
 }
 
-export interface FilmsResponse {
+/*export interface FilmsResponse {
   results: Film[];
-}
+}*/
