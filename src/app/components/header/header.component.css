@@ -1,7 +1,6 @@
 header {
   background-color: black;
   padding: 1rem;
-  /*width: 100%;*/
 }
 
 header .menu {
@@ -15,7 +14,7 @@ header .menu img {
 
 header .menu .navbar {
   list-style: none;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   display: flex;
   justify-content: space-evenly;
 
