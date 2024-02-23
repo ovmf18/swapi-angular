@@ -11,7 +11,10 @@ export class SwapiService {
 
   constructor(private http: HttpClient) {}
 
-  getFilms(): Observable<ReturnAPI<Film>> {
-    return this.http.get<ReturnAPI<Film>>(`${this.baseUrl}/films`);
+  getFilms(searchTerm?: string): Observable<ReturnAPI<Film>> {
+    const url = searchTerm
+      ? `${this.baseUrl}films/?search=${encodeURIComponent(searchTerm)}`
+      : `${this.baseUrl}films`;
+    return this.http.get<ReturnAPI<Film>>(url);
   }
 }

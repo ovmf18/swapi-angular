@@ -1,3 +1,14 @@
+<div class="search-container">
+  <form (submit)="searchFilms()">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      name="search"
+      placeholder="Buscar por título..."
+    />
+    <button type="submit">Buscar</button>
+  </form>
+</div>
 <div class="films__page container">
   <div *ngIf="isLoading; else tableContent">
     <mat-spinner></mat-spinner>

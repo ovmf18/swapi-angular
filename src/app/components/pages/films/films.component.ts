@@ -1,5 +1,4 @@
 import { SwapiService } from './../../../services/swapi.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../../../models/interfaces';
 
@@ -15,12 +14,24 @@ export class FilmsComponent implements OnInit {
 
   resultFilms: Film[] = [];
   columns: string[] = ['title', 'director', 'producer', 'release_date'];
+  searchTerm: string = '';
 
-  getFilms() {
-    this.swapiService.getFilms().subscribe((res) => {
-      this.resultFilms = res.results;
-      this.isLoading = false;
-    });
+  getFilms(searchTerm?: string) {
+    this.isLoading = true;
+    this.swapiService.getFilms(searchTerm).subscribe(
+      (res) => {
+        this.resultFilms = res.results;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Erro ao buscar filmes: ', error);
+        this.isLoading = false;
+      }
+    );
+  }
+
+  searchFilms() {
+    this.getFilms(this.searchTerm);
   }
 
   ngOnInit() {
