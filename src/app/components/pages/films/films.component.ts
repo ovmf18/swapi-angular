@@ -9,6 +9,7 @@ import { Film } from '../../../models/interfaces';
 })
 export class FilmsComponent implements OnInit {
   isLoading = true;
+  noResultsFound = false;
 
   constructor(private swapiService: SwapiService) {}
 
@@ -21,6 +22,7 @@ export class FilmsComponent implements OnInit {
     this.swapiService.getFilms(searchTerm).subscribe(
       (res) => {
         this.resultFilms = res.results;
+        this.noResultsFound = this.resultFilms.length === 0;
         this.isLoading = false;
       },
       (error) => {
