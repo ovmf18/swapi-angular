@@ -59,15 +59,15 @@ export class StarshipsComponent implements OnInit, AfterViewInit {
     this.getStarships();
   }
 
-  formatDate(data: string) {
-    const dataObj = new Date(data);
-    return dataObj.toLocaleDateString('pt-BR');
-  }
-
   openDialog(starship: Starship): void {
     this.dialog.open(StarshipDetailsComponent, {
       width: '500px',
       data: { starship: starship },
     });
+  }
+
+  formatDate(data: string) {
+    const dataObj = new Date(data);
+    return dataObj.toLocaleDateString('pt-BR');
   }
 }

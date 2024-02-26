@@ -1,7 +1,8 @@
 .films__page {
   margin: 20px;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .search-container {
@@ -36,6 +37,16 @@
 
 .search-container button:hover {
   background-color: #333333;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.clickable-row {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

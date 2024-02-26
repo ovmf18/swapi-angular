@@ -45,6 +45,9 @@ mat-paginator {
   justify-content: center;
 }
 
+.clickable-row {
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
   .search-container form {

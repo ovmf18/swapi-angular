@@ -18,6 +18,7 @@ import { StarshipsComponent } from './components/pages/starships/starships.compo
 import { HeaderComponent } from './components/header/header.component';
 import { StarshipDetailsComponent } from './components/modal/starship-details/starship-details.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FilmsDetailsComponent } from './components/modal/films-details/films-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     StarshipsComponent,
     HeaderComponent,
     StarshipDetailsComponent,
+    FilmsDetailsComponent,
   ],
   imports: [
     BrowserModule,

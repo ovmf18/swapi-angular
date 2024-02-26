@@ -1,4 +1,4 @@
-.starship-details {
+.film-details {
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
@@ -9,12 +9,12 @@ mat-card-title {
   margin-bottom: 20px;
 }
 
-.starship-details p {
+.film-details p {
   color: #666;
   line-height: 1.6;
   margin-bottom: 10px;
 }
 
-.starship-details strong {
+.film-details strong {
   color: #333;
 }
