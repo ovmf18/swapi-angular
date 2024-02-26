@@ -1,0 +1,25 @@
+<mat-card class="starship-details">
+  <mat-card-header>
+    <mat-card-title>Detalhes da Nave</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Nome:</strong> {{ data.starship.name }}</p>
+    <p><strong>Modelo:</strong> {{ data.starship.model }}</p>
+    <p><strong>Fabricante:</strong> {{ data.starship.manufacturer }}</p>
+    <p><strong>Custo:</strong> {{ data.starship.cost_in_credits }}</p>
+    <p><strong>Comprimento:</strong> {{ data.starship.length }}</p>
+    <p>
+      <strong>Velocidade máxima de atmosfera: </strong
+      >{{ data.starship.max_atmosphering_speed }}
+    </p>
+    <p><strong>Equipe:</strong> {{ data.starship.crew }}</p>
+    <p><strong>Passageiros:</strong> {{ data.starship.passengers }}</p>
+    <p>
+      <strong>Capacidade de carga:</strong> {{ data.starship.cargo_capacity }}
+    </p>
+    <p><strong>Combustível:</strong> {{ data.starship.consumables }}</p>
+    <p><strong>Hyperdrive:</strong> {{ data.starship.hyperdrive_rating }}</p>
+    <p><strong>Megalight por hora:</strong> {{ data.starship.MGLT }}</p>
+    <p><strong>Classe da nave:</strong> {{ data.starship.starship_class }}</p>
+  </mat-card-content>
+</mat-card>

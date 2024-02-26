@@ -6,14 +6,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FilmsComponent } from './components/pages/films/films.component';
 import { StarshipsComponent } from './components/pages/starships/starships.component';
 import { HeaderComponent } from './components/header/header.component';
+import { StarshipDetailsComponent } from './components/modal/starship-details/starship-details.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { HeaderComponent } from './components/header/header.component';
     FilmsComponent,
     StarshipsComponent,
     HeaderComponent,
+    StarshipDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatProgressSpinnerModule,
     FormsModule,
     MatPaginatorModule,
+    MatDialogModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

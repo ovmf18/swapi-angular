@@ -2,6 +2,8 @@ import { Starship } from './../../../models/interfaces';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { SwapiService } from '../../../services/swapi.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { StarshipDetailsComponent } from '../../modal/starship-details/starship-details.component';
 
 @Component({
   selector: 'app-starships',
@@ -22,7 +24,7 @@ export class StarshipsComponent implements OnInit, AfterViewInit {
     this.paginator.pageIndex = this.currentPage - 1;
   }
 
-  constructor(private swapiService: SwapiService) {}
+  constructor(private swapiService: SwapiService, public dialog: MatDialog) {}
 
   resultStarships: Starship[] = [];
   columns: string[] = ['name', 'model', 'manufacturer', 'hyperdrive_rating'];
@@ -60,5 +62,12 @@ export class StarshipsComponent implements OnInit, AfterViewInit {
   formatDate(data: string) {
     const dataObj = new Date(data);
     return dataObj.toLocaleDateString('pt-BR');
+  }
+
+  openDialog(starship: Starship): void {
+    this.dialog.open(StarshipDetailsComponent, {
+      width: '500px',
+      data: { starship: starship },
+    });
   }
 }
