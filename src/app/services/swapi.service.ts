@@ -18,10 +18,14 @@ export class SwapiService {
     return this.http.get<ReturnAPI<Film>>(url);
   }
 
-  getStarships(searchTerm?: string): Observable<ReturnAPI<Starship>> {
-    const url = searchTerm
-      ? `${this.baseUrl}starships/?search=${encodeURIComponent(searchTerm)}`
-      : `${this.baseUrl}starships`;
+  getStarships(
+    searchTerm?: string,
+    page: number = 1
+  ): Observable<ReturnAPI<Starship>> {
+    let url = `${this.baseUrl}starships/?page=${page}`;
+    if (searchTerm) {
+      url += `&search=${encodeURIComponent(searchTerm)}`;
+    }
     return this.http.get<ReturnAPI<Starship>>(url);
   }
 }

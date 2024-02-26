@@ -1,3 +1,4 @@
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +32,7 @@ import { HeaderComponent } from './components/header/header.component';
     MatTableModule,
     MatProgressSpinnerModule,
     FormsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

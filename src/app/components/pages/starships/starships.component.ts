@@ -1,15 +1,26 @@
 import { Starship } from './../../../models/interfaces';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { SwapiService } from '../../../services/swapi.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-starships',
   templateUrl: './starships.component.html',
   styleUrls: ['./starships.component.css'],
 })
-export class StarshipsComponent implements OnInit {
+export class StarshipsComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  totalStarships: number = 0;
+  pageSize: number = 10;
+  currentPage: number = 1;
+
   isLoading = true;
   noResultsFound = false;
+
+  ngAfterViewInit() {
+    this.paginator.pageIndex = this.currentPage - 1;
+  }
 
   constructor(private swapiService: SwapiService) {}
 
@@ -17,12 +28,12 @@ export class StarshipsComponent implements OnInit {
   columns: string[] = ['name', 'model', 'manufacturer', 'hyperdrive_rating'];
   searchTerm: string = '';
 
-  getStarships(searchTerm?: string) {
+  getStarships(searchTerm?: string, page: number = 1) {
     this.isLoading = true;
-    this.swapiService.getStarships(searchTerm).subscribe(
+    this.swapiService.getStarships(searchTerm, page).subscribe(
       (res) => {
         this.resultStarships = res.results;
-        this.noResultsFound = this.resultStarships.length === 0;
+        this.totalStarships = res.count;
         this.isLoading = false;
       },
       (error) => {
@@ -30,6 +41,12 @@ export class StarshipsComponent implements OnInit {
         this.isLoading = false;
       }
     );
+  }
+
+  changePage(event: any) {
+    this.currentPage = event.pageIndex + 1;
+    this.pageSize = event.pageSize;
+    this.getStarships(this.searchTerm, this.currentPage);
   }
 
   searchStarships() {
