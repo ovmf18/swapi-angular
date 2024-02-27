@@ -1,0 +1,68 @@
+<div *ngIf="!isLoading">
+  <div class="search-container">
+    <form (submit)="searchVehicles()">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        name="search"
+        placeholder="Buscar por nome do veículo..."
+      />
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+</div>
+
+<div class="vehicles__page container">
+  <div *ngIf="isLoading; else contentBlock" class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+  <ng-template #contentBlock>
+    <div *ngIf="noResultsFound; else tableContent" class="error-message">
+      Nenhum resultado encontrado.
+    </div>
+    <ng-template #tableContent>
+      <table mat-table [dataSource]="resultVehicles" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="model">
+          <th mat-header-cell *matHeaderCellDef>Modelo</th>
+          <td mat-cell *matCellDef="let element">{{ element.model }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="manufacturer">
+          <th mat-header-cell *matHeaderCellDef>Fabricante</th>
+          <td mat-cell *matCellDef="let element">{{ element.manufacturer }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="max_atmosphering_speed">
+          <th mat-header-cell *matHeaderCellDef>
+            Velocidade Máxima de Atmosfera
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.max_atmosphering_speed }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: columns"
+          (click)="openDialog(row)"
+          class="clickable-row"
+        ></tr>
+      </table>
+
+      <mat-paginator
+        [length]="totalVehicles"
+        [pageSize]="pageSize"
+        [pageIndex]="currentPage - 1"
+        (page)="changePage($event)"
+        showFirstLastButtons
+      >
+      </mat-paginator>
+    </ng-template>
+  </ng-template>
+</div>

@@ -6,6 +6,7 @@ import { StarshipsComponent } from './components/pages/starships/starships.compo
 import { PeopleComponent } from './components/pages/people/people.component';
 import { PlanetsComponent } from './components/pages/planets/planets.component';
 import { SpeciesComponent } from './components/pages/species/species.component';
+import { VehicleComponent } from './components/pages/vehicle/vehicle.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'people', component: PeopleComponent },
   { path: 'planets', component: PlanetsComponent },
   { path: 'species', component: SpeciesComponent },
+  { path: 'vehicles', component: VehicleComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,25 @@
+<mat-card class="vehicle-details">
+  <mat-card-header>
+    <mat-card-title>Detalhes do Veículo</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Nome:</strong> {{ data.vehicle.name }}</p>
+    <p><strong>Modelo:</strong> {{ data.vehicle.model }}</p>
+    <p><strong>Fabricante:</strong> {{ data.vehicle.manufacturer }}</p>
+    <p>
+      <strong>Custo em Créditos:</strong> {{ data.vehicle.cost_in_credits }}
+    </p>
+    <p><strong>Comprimento:</strong> {{ data.vehicle.length }}</p>
+    <p>
+      <strong>Velocidade Máxima de Atmosfera:</strong>
+      {{ data.vehicle.max_atmosphering_speed }}
+    </p>
+    <p><strong>Equipe:</strong> {{ data.vehicle.crew }}</p>
+    <p><strong>Passageiros:</strong> {{ data.vehicle.passengers }}</p>
+    <p>
+      <strong>Capacidade de Carga:</strong> {{ data.vehicle.cargo_capacity }}
+    </p>
+    <p><strong>Combustível:</strong> {{ data.vehicle.consumables }}</p>
+    <p><strong>Classe do Veículo:</strong> {{ data.vehicle.vehicle_class }}</p>
+  </mat-card-content>
+</mat-card>

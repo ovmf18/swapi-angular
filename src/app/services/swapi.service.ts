@@ -5,6 +5,7 @@ import {
   People,
   Planet,
   Specie,
+  Vehicle,
 } from './../models/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -67,5 +68,16 @@ export class SwapiService {
       url += `&search=${encodeURIComponent(searchTerm)}`;
     }
     return this.http.get<ReturnAPI<Specie>>(url);
+  }
+
+  getVehicle(
+    searchTerm?: string,
+    page: number = 1
+  ): Observable<ReturnAPI<Vehicle>> {
+    let url = `${this.baseUrl}vehicles/?page=${page}`;
+    if (searchTerm) {
+      url += `&search=${encodeURIComponent(searchTerm)}`;
+    }
+    return this.http.get<ReturnAPI<Vehicle>>(url);
   }
 }

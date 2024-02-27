@@ -24,6 +24,8 @@ import { PlanetsComponent } from './components/pages/planets/planets.component';
 import { PlanetsDetailsComponent } from './components/modal/planets-details/planets-details.component';
 import { SpeciesDetailsComponent } from './components/modal/species-details/species-details.component';
 import { SpeciesComponent } from './components/pages/species/species.component';
+import { VehicleComponent } from './components/pages/vehicle/vehicle.component';
+import { VehicleDetailsComponent } from './components/modal/vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { SpeciesComponent } from './components/pages/species/species.component';
     PlanetsDetailsComponent,
     SpeciesDetailsComponent,
     SpeciesComponent,
+    VehicleComponent,
+    VehicleDetailsComponent,
   ],
   imports: [
     BrowserModule,
