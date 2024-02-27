@@ -17,12 +17,13 @@ import { FilmsComponent } from './components/pages/films/films.component';
 import { StarshipsComponent } from './components/pages/starships/starships.component';
 import { HeaderComponent } from './components/header/header.component';
 import { StarshipDetailsComponent } from './components/modal/starship-details/starship-details.component';
-import { MatIconModule } from '@angular/material/icon';
 import { FilmsDetailsComponent } from './components/modal/films-details/films-details.component';
 import { PeopleComponent } from './components/pages/people/people.component';
 import { PeopleDetailsComponent } from './components/modal/people-details/people-details.component';
 import { PlanetsComponent } from './components/pages/planets/planets.component';
 import { PlanetsDetailsComponent } from './components/modal/planets-details/planets-details.component';
+import { SpeciesDetailsComponent } from './components/modal/species-details/species-details.component';
+import { SpeciesComponent } from './components/pages/species/species.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { PlanetsDetailsComponent } from './components/modal/planets-details/plan
     PeopleDetailsComponent,
     PlanetsComponent,
     PlanetsDetailsComponent,
+    SpeciesDetailsComponent,
+    SpeciesComponent,
   ],
   imports: [
     BrowserModule,

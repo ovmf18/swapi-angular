@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   starshipCount: number = 0;
   peopleCount: number = 0;
   planetCount: number = 0;
+  specieCount: number = 0;
   isLoading: boolean = true;
 
   constructor(private swapiService: SwapiService) {}
@@ -35,6 +36,11 @@ export class HomeComponent implements OnInit {
 
     this.swapiService.getPlanet().subscribe((data) => {
       this.planetCount = data.count;
+      this.checkIfLoadingComplete(--requestsPending);
+    });
+
+    this.swapiService.getSpecie().subscribe((data) => {
+      this.specieCount = data.count;
       this.checkIfLoadingComplete(--requestsPending);
     });
   }

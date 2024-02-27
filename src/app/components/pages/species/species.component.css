@@ -1,0 +1,87 @@
+.species__page {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  /*justify-content: center;*/
+  margin: 20px;
+}
+
+.search-container form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px;
+  background-color: #222222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.search-container button:hover {
+  background-color: #333333;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.error-message {
+  background-color: white;
+  color: red;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .search-container form {
+    flex-direction: column;
+  }
+
+  .search-container input[type="text"],
+  .search-container button {
+    border-radius: 5px;
+    border-right: 2px solid #ddd;
+  }
+
+  .search-container button {
+    margin-top: 10px;
+  }
+}

@@ -4,6 +4,7 @@ import {
   Starship,
   People,
   Planet,
+  Specie,
 } from './../models/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -55,5 +56,16 @@ export class SwapiService {
       url += `&search=${encodeURIComponent(searchTerm)}`;
     }
     return this.http.get<ReturnAPI<Planet>>(url);
+  }
+
+  getSpecie(
+    searchTerm?: string,
+    page: number = 1
+  ): Observable<ReturnAPI<Specie>> {
+    let url = `${this.baseUrl}species/?page=${page}`;
+    if (searchTerm) {
+      url += `&search=${encodeURIComponent(searchTerm)}`;
+    }
+    return this.http.get<ReturnAPI<Specie>>(url);
   }
 }
