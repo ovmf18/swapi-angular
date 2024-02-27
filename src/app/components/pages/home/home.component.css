@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Espaço entre os quadrados */
+  margin-top: 50px;
+}
+
+.option {
+  width: 200px;
+  /* Largura fixa para o quadrado */
+  height: 200px;
+  /* Altura fixa para o quadrado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+  width: 210px;
+  height: 210px;
+}
+
+.option p{
+  font-size: 2.5rem;
+  color: #ddd30b;
+  font-weight: 500;
+}
+
+.icon {
+  width: 70px;
+  /* ou qualquer tamanho que se adeque ao seu layout */
+  height: auto;
+  /* mantém a proporção do ícone */
+  margin-bottom: 10px;
+  /* Espaço entre o ícone e o texto abaixo dele */
+}

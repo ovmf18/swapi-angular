@@ -4,31 +4,36 @@ header {
 }
 
 header .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 header .menu img {
-  width: 12rem;
+  width: 8rem;
 }
 
 header .menu .navbar {
   list-style: none;
-  margin: 1.5rem auto;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-evenly;
-
+  justify-content: flex-end;
 }
 
 header .menu .navbar .link-item {
   color: #FFF521;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
   transition: ease 300ms;
   text-decoration: none;
+  margin-left: 2rem;
 }
 
 header .menu .navbar .link-item:hover {
   color: white;
+  font-size: 1.2rem;
 }
