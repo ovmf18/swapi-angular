@@ -21,6 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FilmsDetailsComponent } from './components/modal/films-details/films-details.component';
 import { PeopleComponent } from './components/pages/people/people.component';
 import { PeopleDetailsComponent } from './components/modal/people-details/people-details.component';
+import { PlanetsComponent } from './components/pages/planets/planets.component';
+import { PlanetsDetailsComponent } from './components/modal/planets-details/planets-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { PeopleDetailsComponent } from './components/modal/people-details/people
     FilmsDetailsComponent,
     PeopleComponent,
     PeopleDetailsComponent,
+    PlanetsComponent,
+    PlanetsDetailsComponent,
   ],
   imports: [
     BrowserModule,
