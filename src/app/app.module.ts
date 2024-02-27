@@ -19,6 +19,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { StarshipDetailsComponent } from './components/modal/starship-details/starship-details.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FilmsDetailsComponent } from './components/modal/films-details/films-details.component';
+import { PeopleComponent } from './components/pages/people/people.component';
+import { PeopleDetailsComponent } from './components/modal/people-details/people-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FilmsDetailsComponent } from './components/modal/films-details/films-de
     HeaderComponent,
     StarshipDetailsComponent,
     FilmsDetailsComponent,
+    PeopleComponent,
+    PeopleDetailsComponent,
   ],
   imports: [
     BrowserModule,

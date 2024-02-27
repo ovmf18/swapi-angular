@@ -37,10 +37,12 @@ export class StarshipsComponent implements OnInit, AfterViewInit {
         this.resultStarships = res.results;
         this.totalStarships = res.count;
         this.isLoading = false;
+        this.noResultsFound = res.count === 0;
       },
       (error) => {
         console.error('Erro ao buscar naves: ', error);
         this.isLoading = false;
+        this.noResultsFound = true;
       }
     );
   }

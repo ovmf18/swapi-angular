@@ -1,13 +1,12 @@
 .films__page {
   margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-container {
   display: flex;
-  /*justify-content: center;*/
   margin: 20px;
 }
 
@@ -39,18 +38,6 @@
   background-color: #333333;
 }
 
-.error-message {
-  background-color: white;
-  color: red;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  text-align: center;
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1.2em;
-}
-
 mat-paginator {
   margin-top: 20px;
   display: flex;
@@ -68,6 +55,18 @@ mat-paginator {
   justify-content: center;
   align-items: center;
   height: 80vh;
+}
+
+.error-message {
+  background-color: white;
+  color: red;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
 }
 
 @media (max-width: 768px) {

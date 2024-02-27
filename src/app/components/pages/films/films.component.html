@@ -1,20 +1,22 @@
-<div class="search-container">
-  <form (submit)="searchFilms()">
-    <input
-      type="text"
-      [(ngModel)]="searchTerm"
-      name="search"
-      placeholder="Buscar por título..."
-    />
-    <button type="submit">Buscar</button>
-  </form>
+<div *ngIf="!isLoading">
+  <div class="search-container">
+    <form (submit)="searchFilms()">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        name="search"
+        placeholder="Buscar por título..."
+      />
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
 </div>
 <div class="films__page container">
-  <div *ngIf="isLoading; else contentBlock">
+  <div *ngIf="isLoading; else contentBlock" class="spinner-container">
     <mat-spinner></mat-spinner>
   </div>
   <ng-template #contentBlock>
-    <div *ngIf="noResultsFound; else tableContent">
+    <div *ngIf="noResultsFound; else tableContent" class="error-message">
       Nenhum resultado encontrado.
     </div>
     <ng-template #tableContent>

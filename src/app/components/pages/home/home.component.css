@@ -2,15 +2,12 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  /* Espaço entre os quadrados */
   margin-top: 50px;
 }
 
 .option {
   width: 200px;
-  /* Largura fixa para o quadrado */
   height: 200px;
-  /* Altura fixa para o quadrado */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,9 +32,14 @@
 
 .icon {
   width: 70px;
-  /* ou qualquer tamanho que se adeque ao seu layout */
   height: auto;
-  /* mantém a proporção do ícone */
   margin-bottom: 10px;
-  /* Espaço entre o ícone e o texto abaixo dele */
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* Faz o container ocupar a altura total da viewport */
 }

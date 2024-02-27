@@ -1,19 +1,19 @@
-import { SwapiService } from './../../../services/swapi.service';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Film } from '../../../models/interfaces';
+import { People } from './../../../models/interfaces';
+import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
+import { SwapiService } from '../../../services/swapi.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
-import { FilmsDetailsComponent } from '../../modal/films-details/films-details.component';
+import { PeopleDetailsComponent } from '../../modal/people-details/people-details.component';
 
 @Component({
-  selector: 'app-films',
-  templateUrl: './films.component.html',
-  styleUrls: ['./films.component.css'],
+  selector: 'app-people',
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.css'],
 })
-export class FilmsComponent implements OnInit, AfterViewInit {
+export class PeopleComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  totalFilms: number = 0;
+  totalPeople: number = 0;
   pageSize: number = 10;
   currentPage: number = 1;
 
@@ -26,16 +26,16 @@ export class FilmsComponent implements OnInit, AfterViewInit {
 
   constructor(private swapiService: SwapiService, public dialog: MatDialog) {}
 
-  resultFilms: Film[] = [];
-  columns: string[] = ['title', 'director', 'producer', 'release_date'];
+  resultPeople: People[] = [];
+  columns: string[] = ['name', 'height', 'birth_year', 'skin_color'];
   searchTerm: string = '';
 
-  getFilms(searchTerm?: string, page: number = 1) {
+  getPeople(searchTerm?: string, page: number = 1) {
     this.isLoading = true;
-    this.swapiService.getFilms(this.searchTerm).subscribe(
+    this.swapiService.getPeople(searchTerm, page).subscribe(
       (res) => {
-        this.resultFilms = res.results;
-        this.totalFilms = res.count;
+        this.resultPeople = res.results;
+        this.totalPeople = res.count;
         this.isLoading = false;
         this.noResultsFound = res.count === 0;
       },
@@ -50,21 +50,21 @@ export class FilmsComponent implements OnInit, AfterViewInit {
   changePage(event: any) {
     this.currentPage = event.pageIndex + 1;
     this.pageSize = event.pageSize;
-    this.getFilms(this.searchTerm, this.currentPage);
+    this.getPeople(this.searchTerm, this.currentPage);
   }
 
-  searchFilms() {
-    this.getFilms(this.searchTerm);
+  searchPeople() {
+    this.getPeople(this.searchTerm);
   }
 
   ngOnInit() {
-    this.getFilms();
+    this.getPeople();
   }
 
-  openDialog(film: Film): void {
-    this.dialog.open(FilmsDetailsComponent, {
+  openDialog(people: People): void {
+    this.dialog.open(PeopleDetailsComponent, {
       width: '500px',
-      data: { film: film },
+      data: { people: people },
     });
   }
 

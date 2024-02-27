@@ -1,4 +1,4 @@
-import { ReturnAPI, Film, Starship } from './../models/interfaces';
+import { ReturnAPI, Film, Starship, People } from './../models/interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -27,5 +27,16 @@ export class SwapiService {
       url += `&search=${encodeURIComponent(searchTerm)}`;
     }
     return this.http.get<ReturnAPI<Starship>>(url);
+  }
+
+  getPeople(
+    searchTerm?: string,
+    page: number = 1
+  ): Observable<ReturnAPI<People>> {
+    let url = `${this.baseUrl}people/?page=${page}`;
+    if (searchTerm) {
+      url += `&search=${encodeURIComponent(searchTerm)}`;
+    }
+    return this.http.get<ReturnAPI<People>>(url);
   }
 }

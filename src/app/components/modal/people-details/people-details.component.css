@@ -1,0 +1,20 @@
+.people-details {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+  margin-bottom: 20px;
+}
+
+.people-details p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.people-details strong {
+  color: #333;
+}

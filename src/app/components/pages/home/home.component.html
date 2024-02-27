@@ -1,20 +1,34 @@
-<div class="container">
-  <div class="option" routerLink="/films">
-    <img
-      src="../../../../assets/icons/films.svg"
-      alt="Icone Filmes"
-      class="icon"
-    />
-    <h2>Filmes</h2>
-    <p>{{ filmCount }}</p>
-  </div>
-  <div class="option" routerLink="/starships">
-    <img
-      src="../../../../assets/icons/starships.svg"
-      alt="Icone Filmes"
-      class="icon"
-    />
-    <h2>Naves</h2>
-    <p>{{ starshipCount }}</p>
-  </div>
+<div *ngIf="isLoading; else contentBlock" class="spinner-container">
+  <mat-spinner></mat-spinner>
 </div>
+<ng-template #contentBlock>
+  <div class="container">
+    <div class="option" routerLink="/films">
+      <img
+        src="../../../../assets/icons/films.svg"
+        alt="Icone Filmes"
+        class="icon"
+      />
+      <h2>Filmes</h2>
+      <p>{{ filmCount }}</p>
+    </div>
+    <div class="option" routerLink="/starships">
+      <img
+        src="../../../../assets/icons/starships.svg"
+        alt="Icone Naves"
+        class="icon"
+      />
+      <h2>Naves</h2>
+      <p>{{ starshipCount }}</p>
+    </div>
+    <div class="option" routerLink="/people">
+      <img
+        src="../../../../assets/icons/characters.svg"
+        alt="Icone Personagens"
+        class="icon"
+      />
+      <h2>Personagens</h2>
+      <p>{{ peopleCount }}</p>
+    </div>
+  </div>
+</ng-template>
