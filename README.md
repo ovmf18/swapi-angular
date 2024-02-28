@@ -1,27 +1,53 @@
 # SwapiAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.12, e desenvolvido como parte do desafio #7DaysOfCode em Angular, uma iniciativa da Alura, focada em proporcionar uma experiência prática intensiva de aprendizado.
 
-## Development server
+# Sobre o Projeto
+O Star Wars Explorer é uma aplicação web desenvolvida durante o desafio de 7 dias com Angular, onde o objetivo era mergulhar profundamente no universo Angular enquanto se diverte explorando a vasta galáxia de conteúdos de Star Wars. Este projeto permite aos usuários pesquisar personagens, veículos, filmes e naves estelares, utilizando a API pública do Star Wars para buscar dados em tempo real.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Inspiração e Aprendizado
+Desenvolvido durante o desafio #7DaysOfCode da Alura, este projeto não apenas buscou fortalecer as habilidades em Angular, mas também promover uma abordagem prática de aprendizado, enfrentando desafios diários que simulam cenários reais de desenvolvimento de software. Cada dia do desafio focava em um aspecto específico do Angular, desde a configuração inicial do projeto até a implementação de funcionalidades complexas como serviços, injeção de dependências, e manipulação de dados assíncronos.
 
-## Code scaffolding
+# Funcionalidades
+- Pesquisa de Filmes: Busque filmes pelo título e descubra detalhes fascinantes sobre cada um deles.
+- Exploração de Naves Estelares: Navegue por uma lista de naves estelares, veja detalhes específicos clicando em itens individuais.
+- Informações Detalhadas: Obtenha informações detalhadas sobre filmes e naves estelares, incluindo personagens e modelos de veículos associados.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Objetivos do Projeto
+- Praticar e aprofundar os conhecimentos em Angular.
+- Trabalhar com APIs reais e aprender a manipular dados assíncronos.
+- Aplicar conceitos avançados como Serviços, Injeção de Dependências, FormsModule, HttpClient, e muito mais.
+- Implementar paginação de dados e gerenciar estados de UI.
 
-## Build
+# Tecnologias Utilizadas
+- Angular
+- TypeScript
+- RxJS
+- Angular Material
+- Star Wars API
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Desafios Diários
+- Dia 1: Configuração do projeto Angular e criação de componentes básicos.
+- Dia 2: Exibição estática dos filmes a partir de um JSON.
+- Dia 3: Integração com a API do Star Wars para buscar dados dinamicamente.
+- Dia 4: Implementação de um formulário de pesquisa para os filmes.
+- Dia 5: Exibição das naves estelares utilizando a API.
+- Dia 6: Implementação da paginação para naves estelares.
+- Dia 7: Detalhamento de naves estelares com Event Binding e NgFor.
 
-## Running unit tests
+# Como Executar
+Para rodar o projeto localmente, siga os passos abaixo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone o repositório para sua máquina local:
+`git clone https://github.com/ovmf18/swapi-angular.git`
 
-## Running end-to-end tests
+2. Navegue até o diretório do projeto:
+`cd swapi-angular`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Instale as dependências do projeto:
+`npm install`
 
-## Further help
+4. Inicie o servidor de desenvolvimento:
+`ng serve`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Abra o navegador e visite `http://localhost:4200/` para ver a aplicação em ação.
