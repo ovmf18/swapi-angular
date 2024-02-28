@@ -20,11 +20,11 @@ Desenvolvido durante o desafio #7DaysOfCode da Alura, este projeto não apenas b
 - Implementar paginação de dados e gerenciar estados de UI.
 
 # Tecnologias Utilizadas
-- Angular
-- TypeScript
-- RxJS
-- Angular Material
-- Star Wars API
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [RxJS](https://rxjs.dev/)
+- [Angular Material](https://material.angular.io/)
+- [Star Wars API](https://swapi.dev/)
 
 # Desafios Diários
 - Dia 1: Configuração do projeto Angular e criação de componentes básicos.
